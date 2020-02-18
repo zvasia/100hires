@@ -52,8 +52,7 @@ public class loginTest extends AbstractTest{
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.
                 cssSelector("button.btn.btn-primary.btn-lg.btn-wide.submit-form")));
         newjob.pushSubmitBtn();
-        newjob.pushSubmitBtn();
-        newjob.pushSubmitBtn();
+
         ///
         System.out.println("It's applicant-form");
         new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.
@@ -80,7 +79,9 @@ public class loginTest extends AbstractTest{
         newjob.pushNextTwo();
         //
         System.out.println("Publish");
-        newjob.pushNextTwo();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.
+                cssSelector("a.btn.btn-primary.btn-lg.btn-wide")));
+        newjob.goToOptionalStep();
 
     }
 
