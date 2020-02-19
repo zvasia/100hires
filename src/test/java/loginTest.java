@@ -48,7 +48,7 @@ public class loginTest extends AbstractTest{
         newjob.setJobLocationField(location);
         new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.
                 cssSelector(".pac-item")));
-        newjob.setLocationInList();
+        newjob.setFirstLocationInList();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.
                 cssSelector("button.btn.btn-primary.btn-lg.btn-wide.submit-form")));
         newjob.pushSubmitBtn();

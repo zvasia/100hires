@@ -18,16 +18,15 @@ public class NewJobPage extends AbstractPage {
     @FindBy (name = "job_location[full_address]")
     private WebElement jobLocationField;
 
-    @FindBy (css = "span.pac-matched")
+    @FindBy (css = "div.pac-item") //span.pac-matched
     private WebElement locationLiElement;
 
     public void setJobLocationField(String location) {
         jobLocationField.sendKeys(location);
     }
 
-    public void setLocationInList(){
+    public void setFirstLocationInList(){
         locationLiElement.click();
-        //jobLocationField.sendKeys(Keys.RETURN);
     }
 
     @FindBy (id = "job-remote")
@@ -37,14 +36,30 @@ public class NewJobPage extends AbstractPage {
         remoteJobCheckbox.click();
     }
 
+    @FindBy (css = "div.note-editable")
+    private WebElement vacancyTextEditor;
+
+    public void vacancyDescrAddText(String x){
+        vacancyTextEditor.click();
+        vacancyTextEditor.sendKeys(Keys.RETURN);
+        vacancyTextEditor.sendKeys(Keys.RETURN);
+        vacancyTextEditor.sendKeys(x);
+    }
+
+    @FindBy (css = "input#postjobform-email")
+    private WebElement emailForRegistrationField;
+
+    public void setEmailForRegistrationField(String x){
+        emailForRegistrationField.sendKeys(x);
+    }
+
+
     @FindBy (css = "button.btn.btn-primary.btn-lg.btn-wide.submit-form")
     private WebElement submitBtn;
 
     public void pushSubmitBtn() {
         submitBtn.click();
     }
-
-    // step 2
 
     @FindBy (css = "a.btn.btn-primary.btn-lg.btn-wide")
     private WebElement nextBtn;
@@ -65,6 +80,66 @@ public class NewJobPage extends AbstractPage {
     public void goToOptionalStep(){
         toOptionalStep.click();
     }
+
+    @FindBy (css = "button.btn-primary")
+    private WebElement publishBtn;
+
+    public void publishBtnClick(){
+        publishBtn.click();
+    }
+
+    ///job description registration
+
+    @FindBy (id = "fieldsform-first_name")
+    private WebElement firstNameToSubmitJobField;
+
+    public void setFirstNameToSubmitJobField(String x){
+        firstNameToSubmitJobField.sendKeys(x);
+    }
+
+    @FindBy (id = "fieldsform-last_name")
+    private WebElement lastNameToSubmitJobField;
+
+    public void setLastNameToSubmitJobField(String x){
+        lastNameToSubmitJobField.sendKeys(x);
+    }
+
+    @FindBy (id = "fieldsform-company_name")
+    private WebElement companyNameField;
+
+    public void setCompanyNameField(String x){
+        companyNameField.sendKeys(x);
+    }
+
+    @FindBy (id = "fieldsform-web_site")
+    private WebElement companySiteField;
+
+    public void setCompanySiteField(String x){
+        companySiteField.sendKeys(x);
+    }
+
+    @FindBy (id = "fieldsform-web_site")
+    private WebElement phoneField;
+
+    public void setPhoneField(String x){
+        phoneField.sendKeys(x);
+    }
+
+    @FindBy (id = "postjobform-title")
+    private WebElement jobFormNameField;
+
+    public void setJobFormNameField(String jobName){
+        jobFormNameField.sendKeys(jobName);
+    }
+
+    @FindBy (id = "postjobform-remote")
+    private WebElement remoteFormJobCheckbox;
+
+    public void setRemoteFormJobCheckbox() {
+        remoteFormJobCheckbox.click();
+    }
+
+
 
 
 

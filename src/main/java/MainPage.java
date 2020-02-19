@@ -13,6 +13,15 @@ public class MainPage extends AbstractPage{
         toLoginPageButton.click();
     }
 
+
+    // Footer
+    @FindBy(xpath = "//a[contains(.,'Job Descriptions')]")
+    private WebElement jobDescriptionLink;
+
+    public void clickJobDescriptionLink(){
+        jobDescriptionLink.click();
+    }
+
     public MainPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
