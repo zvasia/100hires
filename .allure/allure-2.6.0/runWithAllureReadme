@@ -1,0 +1,11 @@
+Then build the project (build requires JDK 1.8 or higher):
+
+$ ./mvnw clean verify
+
+Then, to build Allure report run
+
+$ ./mvnw allure:report
+
+In order to view the report run
+
+$ ./mvnw allure:serve

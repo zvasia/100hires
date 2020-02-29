@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: registerFromIndexTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 12.749 s <<< FAILURE! - in registerFromIndexTest
+registerFromIndex(registerFromIndexTest)  Time elapsed: 12.73 s  <<< FAILURE!
+java.lang.AssertionError: Адрес страницы https://app.100hires.com/auth/regist не соответствует требованиям: https://app.100hires.com/auth/register
+	at registerFromIndexTest.registerFromIndex(registerFromIndexTest.java:24)
+
